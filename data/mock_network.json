@@ -1,0 +1,58 @@
+{
+  "es_mock": true,
+  "proyecto": {
+    "nombre": "Res-Q",
+    "subtitulo": "Plataforma visual de soporte a decisiones logísticas de emergencia",
+    "cliente": "COER Piura",
+    "descripcion": "Ubicación óptima de centros de acopio ante inundaciones en Piura, comparando optimización clásica y variacional (QAOA) sobre IBM Quantum.",
+    "equipo": ["Integrante 1", "Integrante 2", "Integrante 3", "Integrante 4"]
+  },
+  "regiones": [
+    {"id": "piura", "nombre": "Piura", "lat": -5.1945, "lon": -80.6328, "disponible": true},
+    {"id": "tumbes", "nombre": "Tumbes", "lat": -3.5669, "lon": -80.4515, "disponible": false},
+    {"id": "lambayeque", "nombre": "Lambayeque", "lat": -6.7714, "lon": -79.8409, "disponible": false},
+    {"id": "la_libertad", "nombre": "La Libertad", "lat": -8.1160, "lon": -79.0300, "disponible": false}
+  ],
+  "escenarios": {
+    "alto_piura": {
+      "nombre": "Ruptura Eje Alto Piura",
+      "arcos_interrumpidos": [[2, 14], [2, 15], [2, 16]],
+      "ranking_oferta": [0, 1, 2, 4, 3]
+    },
+    "bajo_piura": {
+      "nombre": "Inundación Bajo Piura",
+      "arcos_interrumpidos": [[0, 10], [0, 11], [0, 12]],
+      "ranking_oferta": [4, 1, 2, 0, 3]
+    },
+    "quebradas": {
+      "nombre": "Activación de quebradas (Morropón - Huancabamba)",
+      "arcos_interrumpidos": [[2, 16], [2, 14]],
+      "ranking_oferta": [2, 0, 1, 4, 3]
+    }
+  },
+  "nodos_oferta": [
+    {"id": 0, "nombre": "Almacén Subregional Piura", "lat": -5.1945, "lon": -80.6328, "capacidad_t": 150},
+    {"id": 1, "nombre": "Almacén Sullana", "lat": -4.9039, "lon": -80.6853, "capacidad_t": 110},
+    {"id": 2, "nombre": "Almacén Subregional Chulucanas", "lat": -5.0955, "lon": -80.1627, "capacidad_t": 120},
+    {"id": 3, "nombre": "Almacén Paita", "lat": -5.0892, "lon": -81.1144, "capacidad_t": 90},
+    {"id": 4, "nombre": "Almacén Sechura", "lat": -5.5569, "lon": -80.8223, "capacidad_t": 80}
+  ],
+  "nodos_demanda": [
+    {"id": 10, "nombre": "Catacaos", "lat": -5.2667, "lon": -80.6833, "poblacion": 66000},
+    {"id": 11, "nombre": "Cura Mori", "lat": -5.3500, "lon": -80.6500, "poblacion": 18000},
+    {"id": 12, "nombre": "La Arena", "lat": -5.3400, "lon": -80.7100, "poblacion": 38000},
+    {"id": 13, "nombre": "Tambogrande", "lat": -4.9333, "lon": -80.3500, "poblacion": 108000},
+    {"id": 14, "nombre": "Morropón", "lat": -5.1833, "lon": -79.9833, "poblacion": 41000},
+    {"id": 15, "nombre": "Canchaque", "lat": -5.3667, "lon": -79.6000, "poblacion": 8000},
+    {"id": 16, "nombre": "Huancabamba", "lat": -5.2394, "lon": -79.4519, "poblacion": 31000}
+  ],
+  "arcos": [
+    [0, 10], [4, 10], [1, 10],
+    [0, 11], [4, 11],
+    [0, 12], [4, 12],
+    [1, 13], [2, 13], [0, 13],
+    [2, 14], [0, 14],
+    [2, 15], [0, 15],
+    [2, 16], [0, 16]
+  ]
+}
